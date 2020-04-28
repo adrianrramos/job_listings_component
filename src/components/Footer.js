@@ -2,9 +2,9 @@ import React from 'react'
 
 const Footer = () => {
     return (
-        <div class="attribution">
-            Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-            Coded by <a href="">Your Name Here</a>.
+        <div className="attribution">
+            Challenge by <a href="https://www.frontendmentor.io?ref=challenge" >Frontend Mentor</a>. 
+            Coded by <a href="https://github.com/ramos-codes/job_listings_component">Your Name Here</a>.
         </div>
     )
 }
