@@ -12,7 +12,8 @@ const JobPost = ({
     postedAt, 
     contract, 
     location, 
-    tags 
+    tags,
+    onTagSelect 
 }) => {
     return (
         <div className="job-post">
@@ -29,10 +30,10 @@ const JobPost = ({
                 />
             </div>
             <div className="tags-container">
-                <Tags tags={tags}/>
+                <Tags tags={tags} onTagSelect={onTagSelect}/>
             </div>
         </div>
     )
 }
 
-export default JobPost
+export default JobPost;

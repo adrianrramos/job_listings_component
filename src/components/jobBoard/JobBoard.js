@@ -1,7 +1,7 @@
 import React from 'react'
 import JobPost from './JobPost'
 
-const JobBoard = ({ data }) => {
+const JobBoard = ({ data, onTagSelect }) => {
     return (
         <div className="job-board">
             {data.map(job =>  (
@@ -19,6 +19,7 @@ const JobBoard = ({ data }) => {
                         location={job.location}
                         // Tags Props
                         tags={getJobTags(job)}
+                        onTagSelect={onTagSelect}
                     />
             ))}
         </div>

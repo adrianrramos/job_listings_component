@@ -72,6 +72,12 @@
 
 .desc-middle {
     margin: 0 auto;
+    color: black;
+}
+
+.desc-middle:hover {
+    color: hsl(180, 29%, 50%);
+    cursor: pointer;
 }
 
 .position {
@@ -115,4 +121,10 @@
 .tag:hover {
     background-color: hsl(180, 29%, 50%);
     color: hsl(180, 31%, 95%);
+    cursor: pointer;
+}
+
+.filled-background {
+    background-color: hsl(180, 29%, 50%);
+    color: white;
 }
