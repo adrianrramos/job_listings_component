@@ -31,13 +31,8 @@ const getJobTags = (job) => {
     let tags = [];
     
     tags.push(job.role);
-    
-    if(job.tools ){
-        tags.push(...job.tools);
-    }
-    if(job.languages){
-        tags.push(...job.languages);
-    }
+    job.tools && tags.push(...job.tools);
+    job.languages && tags.push(...job.languages);
 
     return tags;
 };
