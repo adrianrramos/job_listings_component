@@ -2,8 +2,8 @@ import React from 'react';
 
 const Icon = ({avi, company}) => {
     return (
-        <div>
-            <img src={avi} alt={company}></img>
+        <div className="icon-box">
+            <img src={avi} alt={company} className="icon"/>
         </div>
     )
 }

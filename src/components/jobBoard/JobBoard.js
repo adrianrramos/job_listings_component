@@ -5,7 +5,6 @@ const JobBoard = ({ data }) => {
     return (
         <div className="job-board">
             {data.map(job =>  (
-                <div className="job-post-container" key={job.id}>
                     <JobPost
                         key={job.id}
                         // Icon  Props
@@ -21,7 +20,6 @@ const JobBoard = ({ data }) => {
                         // Tags Props
                         tags={getJobTags(job)}
                     />
-                </div>
             ))}
         </div>
     )
@@ -31,6 +29,8 @@ const JobBoard = ({ data }) => {
 const getJobTags = (job) => {
     let tags = [];
     
+    tags.push(job.role);
+    
     if(job.tools ){
         tags.push(...job.tools);
     }
@@ -38,7 +38,6 @@ const getJobTags = (job) => {
         tags.push(...job.languages);
     }
 
-    tags.push(job.role);
     return tags;
 };
 

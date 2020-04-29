@@ -13,7 +13,15 @@ export class Description extends Component {
         } = this.props;
         return (
             <div className="description-box"> 
-                {company} 
+                <div className="desc-top">
+                    <p className="company">{company}</p>
+                    {newPost && <div className="new flair">new</div>}
+                    {featured && <div className="featured flair">featured</div>}
+                </div>
+                <div className="desc-middle">
+                    <h5 className="position">{position}</h5>
+                </div>
+                <div className="desc-bottom">{postedAt} &middot; {contract} &middot; {location}</div>
             </div>
         )
     }

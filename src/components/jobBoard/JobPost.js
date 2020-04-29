@@ -16,10 +16,8 @@ const JobPost = ({
 }) => {
     return (
         <div className="job-post">
-            <div className="icon-box">
+            <div className="icon-description-container">
                 <Icon avi={avi} alt={company}/>
-            </div>
-            <div className="description-container">
                 <Description 
                     company={company}
                     newPost={newPost}
