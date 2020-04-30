@@ -1,7 +1,7 @@
 import React from 'react'
 import JobPost from './JobPost'
 
-const JobBoard = ({ data, onTagSelect }) => {
+const JobBoard = ({ data, onTagSelect, getJobTags }) => {
     return (
         <div className="job-board">
             {data.map(job =>  (
@@ -24,17 +24,6 @@ const JobBoard = ({ data, onTagSelect }) => {
             ))}
         </div>
     )
-};
-
-// Return array of all different tags from job object
-const getJobTags = (job) => {
-    let tags = [];
-    
-    tags.push(job.role);
-    job.tools && tags.push(...job.tools);
-    job.languages && tags.push(...job.languages);
-
-    return tags;
 };
 
 export default JobBoard;

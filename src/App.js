@@ -12,55 +12,59 @@ export class App extends Component {
         selectedTags: []
     }
 
-    componentDidMount() {
-        console.log("Mounted with these: " + this.state.selectedTags)
-    }
-
     onTagsSelect = (selectedTag) => {
         this.setState({ selectedTags: [...this.state.selectedTags, selectedTag] });
         
-        let postTags = [];
-        [...this.state.main_data].map(job => {
-            let tags = [];
-            tags.push(job.role);
-            job.tools && tags.push(...job.tools);
-            job.languages && tags.push(...job.languages);
-            
-            postTags = [ ...postTags, { id: job.id, tags: tags, selected: true } ];
+    }
 
-        });
-
-        // filter out postTags based on selected tags
-        [...postTags].map(post => {
-            for(let i=0; i < post.tags.length; i++){
-                for(let j=0; j < this.state.selectedTags.length; j++) {
-                    if(post.tags[i] === this.state.selectedTags[j]) {
-                        return post.selected = true;
+    getJobTags = (job) => {
+        let tags = [];
+        
+        tags.push(job.role);
+        job.tools && tags.push(...job.tools);
+        job.languages && tags.push(...job.languages);
+    
+        return tags;
+    };
+    
+    // TODO: Find where in this logic we throw an undefined error
+    componentDidUpdate(prevProps, prevState) {
+        if (prevState.selectedTags !== this.state.selectedTags) {
+            // create special array of all jobs with their tags and selected status
+            let postTags = [];
+            this.state.main_data.map(job => {
+                return postTags = [ ...postTags, { id: job.id, tags: this.getJobTags(job), selected: true } ];
+            });
+        
+            // filter out postTags based on current selected tags
+            postTags.map(post => {
+                for(let i=0; i < post.tags.length; i++){
+                    for(let j=0; j < this.state.selectedTags.length; j++) {
+                        if(post.tags[i] === this.state.selectedTags[j]) {
+                            return post.selected = true;
+                        }
                     }
                 }
+                return post.selected = false;
+            });
+            // grab all obnjects from posTags that have selected = true 
+            const selectedIds = postTags.filter(post => post.selected === true);
+            
+            // grab all posts that match with the currently selected from postTags
+            let newSelectedPosts = []
+            for(let i = 0; i < selectedIds.length; i++){
+                let id = selectedIds[i].id;
+        
+                let post = this.state.main_data.filter(post => post.id === id);
+        
+                newSelectedPosts = [...newSelectedPosts, post[0]];
             }
-            return post.selected = false;
-        })
 
-        const selectedIds = [...postTags].filter(post => post.selected === true);
-        console.log(selectedIds)
-
-        let newSelectedPosts = []
-
-        for(let i = 0; i < selectedIds.length; i++){
-            let id = selectedIds[i].id;
-
-            let post = [...this.state.selectedPosts].filter(post => post.id === id);
-
-            newSelectedPosts = [...newSelectedPosts, post[0]];
+            this.setState({ selectedPosts: [...newSelectedPosts] });
         }
-
-        // this.setState({ selectedPosts: [...newSelectedPosts] });
-        console.log(newSelectedPosts)
     }
 
     render() {
-        console.log("Rendered with these: " + this.state.selectedTags);
 
         return (
             <div id="main-container">
@@ -68,7 +72,7 @@ export class App extends Component {
                     <FilterBar filters={this.state.selectedTags}/>
                 </div>
                 <div id="job-board-container">
-                    <JobBoard data={this.state.selectedPosts} onTagSelect={this.onTagsSelect}/>
+                    <JobBoard data={this.state.selectedPosts} onTagSelect={this.onTagsSelect} getJobTags={this.getJobTags}/>
                 </div>
                 <Footer />
             </div>
