@@ -1,17 +1,16 @@
-* {
-    /* border: .5px solid black; */
-}
-
 .filter-bar-container {
     width: 75%;
     padding: 2vw;
     margin: 3vw auto;
+    margin-top: -4vw;
     display: flex;
     justify-content: space-between;
     align-content: center;
     box-shadow: 7px 10px 30px hsl(0, 0%, 85%);
     border-radius: 5px;
     font-family: 'Spartan', sans-serif;
+    z-index: 1;
+    background-color: white;
 }
 
 .all-filters {

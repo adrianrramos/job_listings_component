@@ -20,7 +20,6 @@ const FilterBar = ({ filters, deleteTag, clearTags }) => {
                 </div>
             }
         </>
-        
     );
 };
 

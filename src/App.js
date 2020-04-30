@@ -9,7 +9,7 @@ export class App extends Component {
     state = {
         main_data: data.default,
         selectedPosts: data.default,
-        selectedTags: []
+        selectedTags: ["Penis Bologny Nigga"]
     }
 
     onTagsSelect = (selectedTag) => {
@@ -87,7 +87,6 @@ export class App extends Component {
         return (
             <div id="main-container">
                 <div className="page-header">
-                    
                 </div>
                 <div id="filter-bar-container">
                     <FilterBar filters={this.state.selectedTags} deleteTag={this.onTagDelete} clearTags={this.clearAllSelectedTags}/>
