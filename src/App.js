@@ -26,8 +26,18 @@ export class App extends Component {
     
         return tags;
     };
+
+    findAllMatches = (selectedTags, postTags) => {
+        let matches = []
+        for(let i=0; i<selectedTags.length; i++) {
+            matches.push(postTags.find(tag => tag === selectedTags[i]));
+        }
+        if (JSON.stringify(matches) === JSON.stringify(selectedTags)) {
+            return true;
+        }
+        return false;
+    }
     
-    // TODO: Find where in this logic we throw an undefined error
     componentDidUpdate(prevProps, prevState) {
         if (prevState.selectedTags !== this.state.selectedTags) {
             // create special array of all jobs with their tags and selected status
@@ -38,15 +48,12 @@ export class App extends Component {
         
             // filter out postTags based on current selected tags
             postTags.map(post => {
-                for(let i=0; i < post.tags.length; i++){
-                    for(let j=0; j < this.state.selectedTags.length; j++) {
-                        if(post.tags[i] === this.state.selectedTags[j]) {
-                            return post.selected = true;
-                        }
-                    }
+                if(this.findAllMatches(this.state.selectedTags, post.tags)){
+                    return post.selected = true;
                 }
                 return post.selected = false;
             });
+
             // grab all obnjects from posTags that have selected = true 
             const selectedIds = postTags.filter(post => post.selected === true);
             
