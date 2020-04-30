@@ -1,11 +1,27 @@
-import React from 'react'
+import React from 'react';
+import Filter from './Filter';
 
-const FilterBar = () => {
+const FilterBar = ({ filters, deleteTag, clearTags }) => {
     return (
-        <div>
-            NO TEETH
-        </div>
-    )
-}
+        <>
+            {
+                filters.length > 0 &&
+                <div className="filter-bar-container">
+                    <div className="all-filters">
+                        {
+                            filters.map(filter => {
+                                return <Filter filter={filter} key={filter} deleteTag={deleteTag}/>
+                            })
+                        }
+                    </div>
+                    <div className="clear-input" onClick={() => clearTags()}>
+                        Clear
+                    </div>
+                </div>
+            }
+        </>
+        
+    );
+};
 
-export default FilterBar
+export default FilterBar;

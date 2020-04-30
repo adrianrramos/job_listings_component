@@ -13,8 +13,19 @@ export class App extends Component {
     }
 
     onTagsSelect = (selectedTag) => {
-        this.setState({ selectedTags: [...this.state.selectedTags, selectedTag] });
-        
+        if(selectedTag === this.state.selectedTags.find(tag => tag === selectedTag)) {
+            return null;
+        }
+        return this.setState({ selectedTags: [...this.state.selectedTags, selectedTag] });
+    }
+
+    onTagDelete = (selectedTag) => {
+        const newSelectedTags = this.state.selectedTags.filter(tag => tag !== selectedTag);
+        this.setState({ selectedTags: newSelectedTags });
+    }
+
+    clearAllSelectedTags = () => {
+        this.setState({ selectedTags: [] });
     }
 
     getJobTags = (job) => {
@@ -27,7 +38,7 @@ export class App extends Component {
         return tags;
     };
 
-    findAllMatches = (selectedTags, postTags) => {
+    allTagsInsideOf = (postTags, selectedTags) => {
         let matches = []
         for(let i=0; i<selectedTags.length; i++) {
             matches.push(postTags.find(tag => tag === selectedTags[i]));
@@ -37,7 +48,7 @@ export class App extends Component {
         }
         return false;
     }
-    
+
     componentDidUpdate(prevProps, prevState) {
         if (prevState.selectedTags !== this.state.selectedTags) {
             // create special array of all jobs with their tags and selected status
@@ -48,7 +59,7 @@ export class App extends Component {
         
             // filter out postTags based on current selected tags
             postTags.map(post => {
-                if(this.findAllMatches(this.state.selectedTags, post.tags)){
+                if(this.allTagsInsideOf(post.tags, this.state.selectedTags)){
                     return post.selected = true;
                 }
                 return post.selected = false;
@@ -75,8 +86,11 @@ export class App extends Component {
 
         return (
             <div id="main-container">
+                <div className="page-header">
+                    
+                </div>
                 <div id="filter-bar-container">
-                    <FilterBar filters={this.state.selectedTags}/>
+                    <FilterBar filters={this.state.selectedTags} deleteTag={this.onTagDelete} clearTags={this.clearAllSelectedTags}/>
                 </div>
                 <div id="job-board-container">
                     <JobBoard data={this.state.selectedPosts} onTagSelect={this.onTagsSelect} getJobTags={this.getJobTags}/>
