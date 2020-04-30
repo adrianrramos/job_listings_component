@@ -9,7 +9,7 @@ export class App extends Component {
     state = {
         main_data: data.default,
         selectedPosts: data.default,
-        selectedTags: ["Penis Bologny Nigga"]
+        selectedTags: []
     }
 
     onTagsSelect = (selectedTag) => {

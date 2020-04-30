@@ -1,8 +1,8 @@
 .page-header {
     height: 10vw;
     margin: -.6vw;
+    margin-bottom: 2vw;
     background-image: url("../images/bg-header-desktop.svg");
     background-color: hsl(180, 29%, 50%);
     opacity: .8;
-    z-index: 0;
 }
