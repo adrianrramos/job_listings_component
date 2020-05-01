@@ -1,6 +1,6 @@
 # Frontend Mentor - Job Listings Challenge
 
-![Design preview for the Job Listings coding challenge](../04_design/desktop_preview.jpg)
+![Design preview for the Job Listings coding challenge](http://prntscr.com/s91e5j)
 
 ## Welcome! 👋
 
