@@ -1,3 +1,15 @@
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        margin-top: -5vw;
+    }
+
+    to {
+        opacity: 1;
+        margin-top: 3vw;
+    }
+}
+
 .filter-bar-container {
     width: 75%;
     padding: 2vw;
@@ -9,6 +21,9 @@
     border-radius: 5px;
     font-family: 'Spartan', sans-serif;
     background-color: white;
+    animation: slideDown;
+    animation-duration: .5s;
+    animation-iteration-count: 1;    
 }
 
 .all-filters {
@@ -29,6 +44,9 @@
     height: 100%;
     background-color: hsl(180, 31%, 95%);
     border-radius: 3px 0 0 3px;
+    color: hsl(180, 29%, 50%);
+    font-size: 1vw;
+    font-weight: 700;
 }
 
 

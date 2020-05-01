@@ -6,7 +6,7 @@ const FilterBar = ({ filters, deleteTag, clearTags }) => {
         <>
             {
                 filters.length > 0 &&
-                <div className="filter-bar-container">
+                <div className="filter-bar-container" id="fixed-bar">
                     <div className="all-filters">
                         {
                             filters.map(filter => {
