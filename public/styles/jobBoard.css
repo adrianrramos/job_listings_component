@@ -1,128 +1,127 @@
 .job-board {
-    font-family: 'Spartan', sans-serif;
+  font-family: "Spartan", sans-serif;
 }
 
 .job-post {
-    width: 75%;
-    padding: 2vw;
-    margin: 3vw auto;
-    display: flex;
-    justify-content: space-between;
-    align-content: center;
-    box-shadow: 7px 10px 30px hsl(0, 0%, 85%);
-    border-radius: 5px;
+  width: 75%;
+  padding: 2vw;
+  margin: 3vw auto;
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  box-shadow: 7px 10px 30px hsla(0, 0%, 85%, 0.375);
+  border-radius: 5px;
 }
 
 .icon-description-container {
-    width: 50%;
-    display: flex;
-    justify-content: flex-start;
-    margin: 2vw 0 2vw 0;
+  width: 50%;
+  display: flex;
+  justify-content: flex-start;
+  margin: 2vw 0 2vw 0;
 }
 
 /* ICON  */
 .icon-box {
-    margin-right: 1.5vw;
+  margin-right: 1.5vw;
 }
 
 .icon {
-    width: 10vw;
-    height: 10vw;
+  width: 10vw;
+  height: 10vw;
 }
 
 /* DESCRIPTION */
-.description-box{
-    color: hsl(180, 29%, 50%);
+.description-box {
+  color: hsl(180, 29%, 50%);
 }
 
 .desc-top {
-    display: flex;
-    font-size: 1.5vw;
+  display: flex;
+  font-size: 1.5vw;
 }
 
 .company {
-    font-size: 1.1vw;
-    font-weight: 600;
-    margin-right: .5vw;
+  font-size: 1.1vw;
+  font-weight: 600;
+  margin-right: 0.5vw;
 }
 
 .flair {
-    text-transform: uppercase;
-    /* margin: auto .25vw;
+  text-transform: uppercase;
+  /* margin: auto .25vw;
     padding-top: .6vw; */
-    margin: auto .25vw;
-    padding: 0 .8vw 0 .8vw;
-    height: 2vw;
-    line-height: 2.3vw;
-    border-radius: 20px;
-    color: hsl(180, 31%, 95%);
-    font-size: .9vw;
-    font-weight: 700;
+  margin: auto 0.25vw;
+  padding: 0 0.8vw 0 0.8vw;
+  height: 2vw;
+  line-height: 2.3vw;
+  border-radius: 20px;
+  color: hsl(180, 31%, 95%);
+  font-size: 0.9vw;
+  font-weight: 700;
 }
 
 .new {
-    background-color: hsl(180, 29%, 50%);
+  background-color: hsl(180, 29%, 50%);
 }
 
 .featured {
-    background-color: black;
+  background-color: black;
 }
 
 .desc-middle {
-    margin: 0 auto;
-    color: black;
+  margin: 0 auto;
+  color: black;
 }
 
 .desc-middle:hover {
-    color: hsl(180, 29%, 50%);
-    cursor: pointer;
+  color: hsl(180, 29%, 50%);
+  cursor: pointer;
 }
 
 .position {
-    margin: .5vw auto;
-    font-size: 1.45vw;
+  margin: 0.5vw auto;
+  font-size: 1.45vw;
 }
 
 .desc-bottom {
-    margin-top: 1.5vw;
-    font-size: 1.25vw;
-    font-weight: 500;
+  margin-top: 1.5vw;
+  font-size: 1.25vw;
+  font-weight: 500;
 }
 
 /* TAGS */
 .tags-container {
-    width: 50%;
-    /* position: relative; */
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
+  width: 50%;
+  /* position: relative; */
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
 }
 
 .tags-box {
-    height: 40%;
-    display: flex;
-    flex-flow: row wrap;
-    align-items: center;
-
+  height: 40%;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
 }
 
 .tag {
-    background-color: hsl(180, 31%, 95%);
-    border-radius: 3px;
-    margin: 1vw;
-    padding: 1vw;
-    font-size: 1vw;
-    font-weight: 700;
-    color: hsl(180, 29%, 50%);
+  background-color: hsl(180, 31%, 95%);
+  border-radius: 3px;
+  margin: 1vw;
+  padding: 1vw;
+  font-size: 1vw;
+  font-weight: 700;
+  color: hsl(180, 29%, 50%);
 }
 
 .tag:hover {
-    background-color: hsl(180, 29%, 50%);
-    color: hsl(180, 31%, 95%);
-    cursor: pointer;
+  background-color: hsl(180, 29%, 50%);
+  color: hsl(180, 31%, 95%);
+  cursor: pointer;
 }
 
 .filled-background {
-    background-color: hsl(180, 29%, 50%);
-    color: white;
+  background-color: hsl(180, 29%, 50%);
+  color: white;
 }

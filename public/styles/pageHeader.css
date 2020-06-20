@@ -1,8 +1,9 @@
 .page-header {
-    height: 9vw;
-    margin: -.6vw;
-    margin-bottom: 2vw;
-    background-image: url("../images/bg-header-desktop.svg");
-    background-color: hsl(180, 29%, 50%);
-    opacity: .8;
+  height: 9vw;
+  margin: -0.6vw;
+  margin-bottom: 2vw;
+  background-image: url("../images/bg-header-desktop.svg");
+  background-repeat: round;
+  background-color: hsl(180, 29%, 50%);
+  opacity: 0.8;
 }
