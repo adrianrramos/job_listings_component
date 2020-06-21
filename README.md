@@ -15,3 +15,7 @@ This project is one of the earlier works of mine, something I did to get my feet
 - The CSS styling matches to reference design images given to me
 
 This project helped me grow and understand more about developing.
+
+![Mobile Gif](./gifs/mobile-video1.gif)
+
+![preview design](./gifs/desktop-preview.jpg)
